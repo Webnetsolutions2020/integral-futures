@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>We're Coming Soon - Integral Futures</title>
+  <meta name="description" content="Operationalizing Sustainability - Integral Futures" />
+  <meta name="theme-color" content="#0A66C2" />
+  <!-- Open Graph (edit as needed) -->
+  <meta property="og:title" content="We're Coming Soon - Integral Futures" />
+  <meta property="og:description" content="Stay tuned. Follow us on LinkedIn for updates. - Integral Futures" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <style>
+    :root {
+      --blue: #0A66C2; /* LinkedIn blue-ish */
+      --blue-600: #0b5cb0;
+      --blue-50: #f1f7ff;
+      --text: #0b1a2b;
+      --muted: #57708c;
+      --bg: #ffffff;
+      --ring: rgba(10, 102, 194, 0.25);
+      --shadow: 0 10px 30px rgba(10, 102, 194, 0.12), 0 6px 12px rgba(16, 24, 40, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 1200px at 85% -10%, var(--blue-50), transparent 50%),
+                  radial-gradient(900px 900px at -10% 85%, var(--blue-50), transparent 50%),
+                  var(--bg);
+    }
+
+    .wrap {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    .card {
+      width: min(720px, 100%);
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .glow {
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 180deg at 50% 50%, rgba(10,102,194,0.08), transparent 30%, rgba(10,102,194,0.08) 60%, transparent 90%);
+      filter: blur(40px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, var(--blue), var(--blue-600));
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+      user-select: none;
+      box-shadow: 0 6px 18px rgba(10, 102, 194, 0.35);
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      font-size: 1.125rem;
+    }
+
+    h1 {
+      margin: 0.25rem 0 0.75rem;
+      font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+      line-height: 1.15;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1vw + 0.75rem, 1.125rem);
+    }
+
+    .cta {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.1rem;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid rgba(10,102,194,0.25);
+      background: #fff;
+      color: var(--blue);
+      box-shadow: 0 2px 8px rgba(16,24,40,0.05);
+      transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(16,24,40,0.10); border-color: rgba(10,102,194,0.4); }
+    .btn:focus-visible { outline: none; box-shadow: 0 0 0 6px var(--ring); }
+
+    .btn.primary {
+      background: linear-gradient(180deg, var(--blue), var(--blue-600));
+      color: #fff;
+      border: 1px solid transparent;
+    }
+    .btn.primary:hover { filter: brightness(1.03); }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(10,102,194,0.08);
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.825rem;
+      letter-spacing: 0.2px;
+    }
+
+    footer {
+      margin-top: 1.75rem;
+      color: #6b7a90;
+      font-size: 0.95rem;
+    }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #0f172a; color: #e2e8f0; }
+      .card { background: #0b1220; box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 10px 30px rgba(2,6,23,0.35); }
+      p, .muted { color: #9fb2c9; }
+      .btn { background: #0f172a; color: #dbeafe; border-color: rgba(59,130,246,0.35); }
+      footer { color: #9fb2c9; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" role="region" aria-labelledby="headline">
+      <span class="glow" aria-hidden="true"></span>
+
+      <header>
+        <!-- Replace src with your logo file; fallback logo monogram shows your initials. -->
+        <img id="site-logo" src="images/integral-futures.png" alt="Company logo" width="100" height="85"  />
+        <!-- <div class="logo" id="logo-fallback" aria-hidden="true">R</div> -->
+        <!-- <div class="brand" id="brand-name">Reach</div> -->
+      </header>
+
+      <span class="pill" aria-label="Status: Coming soon">
+        <span aria-hidden="true">•</span> Coming soon
+      </span>
+
+      <h1 id="headline">We’re building something great</h1>
+      <p>Our new site is on the way. Follow us on LinkedIn for updates, launch news, and behind‑the‑scenes.</p>
+
+      <div class="cta">
+        <!-- EDIT this href to your LinkedIn page/profile -->
+        <a class="btn primary" href="https://www.linkedin.com/company/integral-futures/" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2 4 0 4.75 2.6 4.75 6V24h-4v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24H8V8z"/></svg>
+          Follow on LinkedIn
+        </a>
+		 <a class="btn" href="https://anananya37.wixsite.com/anananya-shah">
+          About us
+         </a> 
+        <!-- Optional secondary link (email) -->
+         <a class="btn" href="mailto:integralfuturesofficial@gmail.com">
+          Contact us
+         </a> 
+      </div>
+
+      <footer>
+        <span id="copyright">© <span id="year"></span> Integral Futures. All rights reserved.</span>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    // JS niceties: swap in PNG/SVG logo if available, set year, set monogram & brand from document title.
+    (function() {
+      var logo = document.getElementById('site-logo');
+      var fallback = document.getElementById('logo-fallback');
+      var brand = document.getElementById('brand-name');
+      var year = document.getElementById('year');
+      year.textContent = new Date().getFullYear();
+
+      // Auto-set monogram from brand text
+      var nameText = (brand.textContent || 'R').trim();
+      fallback.textContent = nameText.charAt(0).toUpperCase();
+
+      // If logo file actually loads, show it and hide the fallback
+      function showImage() {
+        if (logo.complete && logo.naturalWidth > 0) {
+          logo.style.display = 'block';
+          fallback.style.display = 'none';
+        }
+      }
+      logo.addEventListener('load', showImage);
+      // In case the file is cached
+      showImage();
+    })();
+  </script>
+</body>
+</html>
